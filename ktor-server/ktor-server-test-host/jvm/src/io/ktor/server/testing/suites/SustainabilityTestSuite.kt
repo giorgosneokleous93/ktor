@@ -493,7 +493,7 @@ abstract class SustainabilityTestSuite<TEngine : ApplicationEngine, TConfigurati
     }
 
     @Test
-    fun testChunkedWithVSpace() {
+    open fun testChunkedWithVSpace() {
         createAndStartServer {
             post("/") {
                 try {

@@ -57,4 +57,10 @@ class TomcatSustainabilityTestSuite :
         }
         enableHttp2 = false
     }
+
+    @Ignore
+    @Test
+    override fun testChunkedWrongLength() {
+        super.testChunkedWithVSpace()
+    }
 }
