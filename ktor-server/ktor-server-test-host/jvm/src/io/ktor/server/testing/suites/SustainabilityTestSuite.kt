@@ -527,10 +527,12 @@ abstract class SustainabilityTestSuite<TEngine : ApplicationEngine, TConfigurati
             }
 
             val result = getInputStream().reader().readLines().joinToString("\n")
-            val expected = """
-            HTTP/1.1 400 
-            """.trimIndent()
-            assertTrue(result.startsWith(expected),"Invalid response: $result")
+            val expected = listOf(
+                "HTTP/1.1 400",
+                "HTTP/1.0 400"
+            )
+
+            assertTrue(expected.any { result.startsWith(it) },"Invalid response: $result")
         }
     }
 }

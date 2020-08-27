@@ -60,7 +60,7 @@ class TomcatSustainabilityTestSuite :
 
     @Ignore
     @Test
-    override fun testChunkedWrongLength() {
+    override fun testChunkedWithVSpace() {
         super.testChunkedWithVSpace()
     }
 }
